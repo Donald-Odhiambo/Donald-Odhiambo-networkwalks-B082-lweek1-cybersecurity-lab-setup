@@ -43,28 +43,9 @@ Tool evaluation and custom script development
 
 ⚠️ Ethical Mandate: All testing must occur within this isolated environment or against systems for which you hold explicit, written authorization. Unauthorized scanning or exploitation of external networks violates legal statutes and professional ethics.
 
-🏗️ Lab Architecture
-text
-┌─────────────────────────────────────────────────────┐
-│                  Host Machine                       │
-│              Windows 10 | 8GB RAM | i7              │
-│                                                     │
-│  ┌───────────────────────────────────────────────┐  │
-│  │           VirtualBox 7.2 Hypervisor           │  │
-│  │                                               │  │
-│  │  ┌─────────────────┐    ┌─────────────────┐   │  │
-│  │  │   Kali Linux    │    │  Future Targets │   │  │
-│  │  │   10.0.0.2      │◄──►│  10.0.0.3–.99   │   │  │
-│  │  │   2GB RAM       │    │  (Metasploitable,│   │  │
-│  │  │   NAT Network   │    │   DVWA, Win10)  │   │  │
-│  │  └─────────────────┘    └─────────────────┘   │  │
-│  │                                               │  │
-│  │           Virtual NAT Network                 │  │
-│  │           10.0.0.0/24 | Gateway: 10.0.0.1     │  │
-│  └───────────────────────────────────────────────┘  │
-│                                                     │
-│  Shared Folder: Host ↔ Kali (Tool transfers)        │
-└─────────────────────────────────────────────────────┘
+The  Lab Architecture
+![Lab Setup Diagram](Lab_Setup.png)
+
 Configuration Matrix
 Component	Specification
 Host OS	Windows 10
