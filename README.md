@@ -95,7 +95,7 @@ Step 4: Kali Linux Provisioning
 The official pre-built Kali Linux VirtualBox image was imported to ensure consistency and reduce setup time.
 
 VM Settings:
-
+![Kali NAT Network](Kali_NatNetwork.png)
 Network Adapter 1: Attached to NatNetwork, Intel PRO/1000 MT Desktop
 
 RAM: 2048 MB (balanced for host stability)
