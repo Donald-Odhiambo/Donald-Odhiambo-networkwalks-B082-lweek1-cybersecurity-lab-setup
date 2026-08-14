@@ -106,7 +106,7 @@ Step 5: Network Hardening — Static IP Assignment
 To ensure deterministic behavior across lab sessions, Kali was configured with a static IPv4 address.
 
 Manual Configuration:
-
+![Kali Hardening](Kali_Hardening.jpeg)
 bash
 IP Address:   10.0.0.2
 Subnet Mask:  255.255.255.0
