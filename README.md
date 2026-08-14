@@ -78,7 +78,7 @@ Installation: Default wizard with Extension Pack for USB 3.0 and RDP support.
 
 Step 3: Network Architecture — NAT Network
 A dedicated NAT Network was engineered to enable inter-VM communication while preserving isolation from the host’s physical network.
-
+![NAT Network Configuration](NatNetwork_Configuration.png)
 Configuration:
 
 Network Name: NatNetwork
@@ -89,7 +89,7 @@ DHCP: Enabled (for future targets; Kali uses static)
 
 IPv6: Disabled (reduces attack surface during learning)
 
-💡 Why NAT Network? Unlike standard NAT (which isolates each VM), a NAT Network allows multiple VMs to communicate with each other while still providing outbound Internet access—critical for multi-machine labs.
+Why NAT Network? Unlike standard NAT (which isolates each VM), a NAT Network allows multiple VMs to communicate with each other while still providing outbound Internet access—critical for multi-machine labs.
 
 Step 4: Kali Linux Provisioning
 The official pre-built Kali Linux VirtualBox image was imported to ensure consistency and reduce setup time.
