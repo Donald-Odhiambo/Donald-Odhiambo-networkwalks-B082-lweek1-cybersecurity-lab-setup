@@ -1,11 +1,11 @@
 # Donald-Odhiambo-networkwalks-B082-lweek1-cybersecurity-lab-setup
 My_Cybersecurity_Lab_Setup
 
-🔐 Professional Cybersecurity Lab Environment Setup
+ Professional Cybersecurity Lab Environment Setup
 Executive Summary
 This document outlines the architecture, configuration, and operational procedures for a production-grade virtual penetration testing laboratory. The environment is engineered to support offensive security operations—including reconnaissance, vulnerability assessment, exploitation, and post-exploitation—within a strictly isolated and ethically governed framework.
 
-🎯 Project Objectives
+ Project Objectives
 The lab was designed to achieve the following technical and operational milestones:
 
 Deploy and harden Oracle VirtualBox 7.2 as the hypervisor layer.
@@ -24,7 +24,7 @@ Document all procedures to professional standards for auditability and knowledge
 
 Prepare the foundation for advanced modules: Active Directory labs, web app testing, and red team simulations.
 
-🛡️ Operational Purpose & Ethical Boundaries
+ Operational Purpose & Ethical Boundaries
 This laboratory exists solely for authorized security research, skill development, and controlled experimentation. Permissible activities include:
 
 Network discovery and enumeration
@@ -41,7 +41,7 @@ Exploitation of intentionally vulnerable targets
 
 Tool evaluation and custom script development
 
-⚠️ Ethical Mandate: All testing must occur within this isolated environment or against systems for which you hold explicit, written authorization. Unauthorized scanning or exploitation of external networks violates legal statutes and professional ethics.
+N/B Ethical Mandate: All testing must occur within this isolated environment or against systems for which you hold explicit, written authorization. Unauthorized scanning or exploitation of external networks violates legal statutes and professional ethics.
 
 The  Lab Architecture
 ![Lab Setup Diagram](Lab_Setup.png)
@@ -61,7 +61,7 @@ Default Gateway	10.0.0.1
 DNS Server	8.8.8.8
 Future Target Range	10.0.0.3 – 10.0.0.99
 
-🪜 Implementation Procedure
+ Implementation Procedure
 Step 1: Prerequisite Tooling — 7-Zip
 The Kali Linux virtual machine image is distributed as a compressed .7z archive. 7-Zip was installed to extract the contents prior to import.
 
@@ -112,7 +112,7 @@ IP Address:   10.0.0.2
 Subnet Mask:  255.255.255.0
 Gateway:      10.0.0.1
 DNS:          8.8.8.8
-🐞 Troubleshooting Note: If Internet connectivity drops after static assignment, adjust NetworkManager’s duplicate address detection timeout:
+Troubleshooting Note from my Instructor: If Internet connectivity drops after static assignment, adjust NetworkManager’s duplicate address detection timeout:
 
 bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
@@ -125,7 +125,7 @@ Snapshot Name: Clean Kali - Network Setup
 
 Purpose: Rapid rollback after tool misconfiguration, system breakage, or experimental changes.
 
-🔎 Validation & Verification
+ Validation & Verification
 All systems were tested to confirm operational readiness.
 
 Test	Command	Expected Outcome
@@ -136,7 +136,7 @@ DNS Resolution	nslookup networkwalks.com	Resolves to public IP
 Toolchain Readiness	nmap --version	Displays Nmap version
 Snapshot Integrity	Restore → ip a	Reverts to 10.0.0.2
 
-🐞 Encountered Challenges & Resolutions
+ Encountered Challenges & Resolutions
 Issue 1: Loss of Internet Post-Static IP
 Symptom: Kali loses outbound connectivity after manual IP assignment.
 
@@ -148,24 +148,10 @@ bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
 sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
-✅ Always verify interface names with nmcli connection show before applying changes.
+ Always verify interface names with nmcli connection show before applying changes.
 
-Issue 2: VT-x / Hardware Virtualization Disabled
-Symptom: VM fails to start with error: “VT-x is not available.”
 
-Resolution:
-
-Reboot host and enter BIOS/UEFI (typically F2, Del, or F10).
-
-Navigate to CPU or Advanced settings.
-
-Enable Intel VT-x or AMD-V.
-
-Save and reboot.
-
-Launch VM successfully.
-
-💡 Key Learnings & Professional Insights
+ Key Learnings & Professional Insights
 This lab reinforced foundational concepts critical to offensive security operations:
 
 NAT vs. NAT Network: NAT isolates VMs; NAT Network enables controlled inter-VM communication—essential for attacker-target dynamics.
@@ -178,7 +164,7 @@ Snapshot Discipline: Always snapshot before risky operations—treat it as your 
 
 Documentation as a Force Multiplier: Professional reports, command logs, and architecture diagrams transform ad-hoc tinkering into auditable, scalable practice.
 
-🔐 Ethical & Legal Compliance
+ Ethical & Legal Compliance
 This environment adheres to the following principles:
 
 Authorization First: No testing outside this lab without explicit, written permission.
@@ -189,7 +175,7 @@ Isolation by Design: Lab traffic never bridges to production or public networks.
 
 Tool Responsibility: Capabilities like nmap, metasploit, and burpsuite are powerful—use them wisely and legally.
 
-🔗 Toolchain & Resources
+ Toolchain & Resources
 7-Zip: https://7-zip.org/download.html
 
 VirtualBox: https://virtualbox.org/wiki/Downloads
@@ -199,11 +185,15 @@ Kali Linux: https://kali.org/get-kali
 Documentation Templates: 
 PentesterWorld
 
-👤 Author & Attribution
-Oketch Donald
-Cybersecurity Intern at Networkwalks Academy| B082
-LinkedIn: linkedin.com/in/waqaskarim
+ Author & Attribution
+Oketch Donald Odhiambo
 
-Program: Cybersecurity at NetworkWalks | Week 01
+Cybersecurity Intern at Networkwalks Academy| B082
+
+LinkedIn: www.linkedin.com/in/oketch-donald-odhiambo-0a6823429
+
+Program: Cybersecurity at NetworkWalks | Week 
+1
 Project: Cybersecurity & Penetration Testing Lab Setup
+
 Repository: GitHub (Public)
